@@ -1,0 +1,24 @@
+type Coba {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  cobas: [Coba!]!
+  getCoba(id: ID!): Coba
+}
+
+input NewCobaInput {
+  name: String!
+}
+
+input UpdateCobaInput {
+  id: ID!
+  name: String!
+}
+
+type Mutation {
+  createCoba(input: NewCobaInput!): Coba!
+  updateCoba(input: UpdateCobaInput!): Coba!
+  deleteCoba(id: ID!): Boolean!
+}
